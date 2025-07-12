@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from "react"
+import Link from "next/link"
 
 export default function ImageBanner() {
     const [isLoaded, setIsLoaded] = useState(false)
@@ -11,7 +12,6 @@ export default function ImageBanner() {
             setIsLoaded(true)
         }
     }, [])
-
 
     return (
         <div className="banner-images">
@@ -26,8 +26,12 @@ export default function ImageBanner() {
                         <h1>The ShipKit Store</h1>
                     </div>
                     <div>
-                        <button>Shop stickers</button>
-                        <button>Shop planner</button>
+                        <Link href="/products">
+                            <button>Shop stickers</button>
+                        </Link>
+                        <Link href="/products">
+                            <button>Shop planner</button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -12,7 +12,7 @@ export default function Home(props) {
 
 
   for (let product of products) {
-    if (product.name === 'Hackathon Sprint Planner') {
+    if (product.name === 'Notion Template') {
       planner = product
       continue
     }

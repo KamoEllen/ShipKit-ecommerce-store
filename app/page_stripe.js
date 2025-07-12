@@ -4,7 +4,7 @@ import Products from "@/components/Products";
 import Stripe from "stripe"
 import '../envConfig.js'
 
-const API_KEY = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
+const API_KEY = process.env.STRIPE_SECRET_KEY
 const stripe = new Stripe(API_KEY, {
     apiVersion: "2023-10-16",
 })
@@ -43,7 +43,7 @@ export default async function Home(props) {
 
 
     for (let product of products) {
-        if (product.name === 'Hackathon Sprint Planner') {
+        if (product.name === 'Notion Template') {
             planner = product
             continue
         }

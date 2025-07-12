@@ -28,6 +28,20 @@ export default function CartPage() {
         return sum
     }, 0)
 
+    function getImageName(productName) {
+        const imageMapping = {
+            'Notion Template': 'planner',
+            'Remote Ops & File Handling Command Card': '1',
+            'System Debug & Monitoring Command Card': '2',
+            'Git: Rewriting History Command Card': '3',
+            'Git: Workflow Power Moves Command Card': '4',
+            'Algorithms & Time Complexity Reference Card': '5',
+            'AWS CLI: S3 & Secrets Command Card': '6'
+        };
+        
+        return imageMapping[productName] || 'placeholder';
+    }
+
     async function createCheckout() {
         try {
             const baseURL = process.env.NEXT_PUBLIC_BASE_URL
@@ -64,23 +78,22 @@ export default function CartPage() {
                     const itemData = cart[item]
                     const itemQuantity = itemData?.quantity
 
-                    const imgName = itemData.name === 'Hackathon Sprint  Planner' ?
-                        'planner' :
-                        itemData.name.replaceAll(' Sticker.png', '').replaceAll(' ', '_')
+                    const imgName = getImageName(itemData.name)
                     const imgUrl = 'low_res/' + imgName + '.png'
+
+                    console.log('Cart item:', itemData.name, 'Image:', imgUrl); 
 
                     return (
                         <div key={itemIndex} className="cart-item">
                             <img src={imgUrl} alt={imgName + '-img'} />
                             <div className="cart-item-info">
                                 <h3>{itemData.name}</h3>
-                                <p>{itemData.description.slice(0, 100)}{itemData.description.length > 100 ? '...' : ''} </p>
-                                <h4>${itemData.prices[0].unit_amount / 100}</h4>
+                                <p>{itemData.description?.slice(0, 100)}{itemData.description?.length > 100 ? '...' : ''} </p>
+                                <h4>R${itemData.prices[0].unit_amount / 100}</h4>
                                 <div className="quantity-container">
                                     <p><strong>Quantity</strong></p>
                                     <input type="number" value={itemQuantity} placeholder="2" onChange={(e) => {
                                         const newValue = e.target.value
-
 
                                         handleIncrementProduct(itemData.default_price, newValue, itemData, true)
                                     }} />
@@ -91,9 +104,12 @@ export default function CartPage() {
                 })}
             </div>
             <div className="checkout-container">
-                <Link href={'/'}>
+                <Link href={'/products'}>
                     <button>&larr; Continue shopping</button>
                 </Link>
+                <div className="total-section">
+                    <h3>Total: R${(total / 100).toFixed(2)}</h3>
+                </div>
                 <button onClick={createCheckout}>Checkout &rarr;</button>
             </div>
         </section>

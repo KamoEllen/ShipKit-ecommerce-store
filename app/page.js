@@ -1,5 +1,5 @@
 import ImageBanner from "@/components/ImageBanner";
-import Products from "@/components/Products";
+// import Products from "@/components/Products";
 
 export async function getProducts() {
     try {
@@ -23,7 +23,7 @@ export default async function Home(props) {
 
 
     for (let product of products) {
-        if (product.name === 'Hackathon Sprint Planner') {
+        if (product.name === 'Notion Template') {
             planner = product
             continue
         }
@@ -34,9 +34,7 @@ export default async function Home(props) {
     return (
         < >
             <ImageBanner />
-            <section>
-                <Products planner={planner} stickers={stickers} />
-            </section>
+
         </>
     );
 }

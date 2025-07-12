@@ -16,7 +16,7 @@ Physical stickers with essential command references to stick near your monitor f
 - **AWS CLI: S3 & Secrets** - S3 operations, secrets management, presigned URLs
 - **Algorithms & Time Complexity** - Big-O reference with common operations
 
-### Hackathon Sprint Planner (Notion Template)
+### Notion Template (Notion Template)
 A systematic Notion template for 24-48 hour hackathons featuring:
 - Team role assignments and responsibilities
 - MVP scope prioritization framework
@@ -57,7 +57,7 @@ A systematic Notion template for 24-48 hour hackathons featuring:
 
 4. **Configure Stripe Products**
    - Create products in your Stripe dashboard
-   - Ensure you have a product named "Hackathon Sprint Planner"
+   - Ensure you have a product named "Notion Template"
    - Create 6 sticker products with appropriate names and prices
 
 5. **Run the development server**
