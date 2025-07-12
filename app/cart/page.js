@@ -30,7 +30,7 @@ export default function CartPage() {
 
     function getImageName(productName) {
         const imageMapping = {
-            'Notion Template': 'planner',
+            'Notion Template': 'Planner',
             'Remote Ops & File Handling Command Card': '1',
             'System Debug & Monitoring Command Card': '2',
             'Git: Rewriting History Command Card': '3',
