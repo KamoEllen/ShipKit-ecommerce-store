@@ -6,6 +6,9 @@ A Next.js e-commerce store selling developer productivity tools including comman
 
 ![video](https://raw.githubusercontent.com/KamoEllen/ShipKit-ecommerce-store/main/demo-1.gif)
 
+👉 [Watch in higher quality on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7349652086994649088)
+
+
 ##  What We Sell
 
 ### Command Card Stickers (6-Pack Collection)
