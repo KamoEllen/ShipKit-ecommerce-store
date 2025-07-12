@@ -4,6 +4,9 @@
 
 A Next.js e-commerce store selling developer productivity tools including command reference stickers and hackathon planning templates. Built for developers who ship fast.
 
+![video](https://github.com/KamoEllen/ShipKit-ecommerce-store/blob/main/demo-1.gif)
+
+
 ##  What We Sell
 
 ### Command Card Stickers (6-Pack Collection)
