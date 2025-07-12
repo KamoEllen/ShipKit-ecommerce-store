@@ -43,7 +43,7 @@ export default function Products({ planner, stickers }) {
           <div className="planner-container">
             <div>
               <button onClick={() => setPortalImage('planner')} className="img-button">
-                <img src="low_res/planner.png" alt="planner-preview" />
+                <img src="low_res/Planner.png" alt="planner-preview" />
               </button>
             </div>
             <div className="planner-info">
