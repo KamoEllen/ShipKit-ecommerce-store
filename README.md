@@ -118,11 +118,14 @@ flowchart TD
     classDef blue fill:#1e40af,stroke:#fff,color:#fff
     classDef brown fill:#92400e,stroke:#fff,color:#fff
     classDef dark fill:#1a365d,stroke:#fff,color:#fff
+    -->
+    -->
 ```
 
 -->
-
+```
 ## Troubleshooting
+
 ### 1. Images Not Loading
 - **Issue**: Planner.png wasn't loading after Amplify deployment
 - **Fix**: Ensure all image references match exact casing (Amplify is case-sensitive)
@@ -132,6 +135,7 @@ flowchart TD
   
   // After (works)
   <img src="low_res/planner.png" />
+  
   ```
 
 ### 2. Stripe Products Not Loading Locally
