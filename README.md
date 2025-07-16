@@ -1,3 +1,39 @@
+## Architecture Diagram
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a365d', 'secondaryColor': '#92400e', 'tertiaryColor': '#1e40af'}}}%%
+flowchart TD
+    subgraph AWS["AWS Amplify (Deployment)"]
+        A[Next.js App]
+    end
+
+    subgraph Frontend["Frontend (React)"]
+        B[Product Display]:::brown
+        C[Cart Context]:::brown
+        D[Image Portal]:::brown
+    end
+
+    subgraph Backend["Backend (Next.js API)"]
+        E[/api/products\nStripe Integration/]:::blue
+        F[/api/checkout\nPayment Session/]:::blue
+    end
+
+    subgraph Stripe["Stripe"]
+        G[Products/Prices]
+        H[Webhooks]
+    end
+
+    A -->|Hosts| Frontend
+    Frontend -->|Fetches| E
+    E -->|Queries| G
+    Frontend -->|Creates| F
+    F -->|Redirects to| H
+    H -->|Confirms| A
+
+    classDef blue fill:#1e40af,stroke:#fff,color:#fff
+    classDef brown fill:#92400e,stroke:#fff,color:#fff
+    classDef dark fill:#1a365d,stroke:#fff,color:#fff
+
+
 # ShipKit Store 
 
 **Dev-first digital tools. Fewer tabs. More flow.**
