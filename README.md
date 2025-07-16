@@ -83,7 +83,7 @@ A modern e-commerce platform built with Next.js and Stripe Checkout, featuring c
 
 
 ## Architecture Diagram
-![image]()
+![image](https://github.com/KamoEllen/ShipKit-ecommerce-store/blob/main/ecom.png)
 <!--
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a365d', 'secondaryColor': '#92400e', 'tertiaryColor': '#1e40af'}}}%%
