@@ -83,6 +83,8 @@ A modern e-commerce platform built with Next.js and Stripe Checkout, featuring c
 
 
 ## Architecture Diagram
+![image]()
+<!--
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a365d', 'secondaryColor': '#92400e', 'tertiaryColor': '#1e40af'}}}%%
 flowchart TD
@@ -118,6 +120,7 @@ flowchart TD
     classDef dark fill:#1a365d,stroke:#fff,color:#fff
 ```
 
+-->
 
 ## Troubleshooting
 ### 1. Images Not Loading
