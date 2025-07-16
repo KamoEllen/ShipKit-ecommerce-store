@@ -1,38 +1,3 @@
-## Architecture Diagram
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a365d', 'secondaryColor': '#92400e', 'tertiaryColor': '#1e40af'}}}%%
-flowchart TD
-    subgraph AWS["AWS Amplify (Deployment)"]
-        A[Next.js App]
-    end
-
-    subgraph Frontend["Frontend (React)"]
-        B[Product Display]:::brown
-        C[Cart Context]:::brown
-        D[Image Portal]:::brown
-    end
-
-    subgraph Backend["Backend (Next.js API)"]
-        E[/api/products\nStripe Integration/]:::blue
-        F[/api/checkout\nPayment Session/]:::blue
-    end
-
-    subgraph Stripe["Stripe"]
-        G[Products/Prices]
-        H[Webhooks]
-    end
-
-    A -->|Hosts| Frontend
-    Frontend -->|Fetches| E
-    E -->|Queries| G
-    Frontend -->|Creates| F
-    F -->|Redirects to| H
-    H -->|Confirms| A
-
-    classDef blue fill:#1e40af,stroke:#fff,color:#fff
-    classDef brown fill:#92400e,stroke:#fff,color:#fff
-    classDef dark fill:#1a365d,stroke:#fff,color:#fff
-```
 
 # ShipKit Store - Next.js E-Commerce with Stripe
 
@@ -48,6 +13,7 @@ A modern e-commerce platform built with Next.js and Stripe Checkout, featuring c
 - [Tech Stack](#tech-stack)
 - [Setup](#setup)
 - [Deployment](#deployment)
+- [Architecture Diagram](#Architecture-Diagram)
 - [Troubleshooting](#troubleshooting)
 - [Stripe Configuration](#stripe-configuration)
 
@@ -114,6 +80,44 @@ A modern e-commerce platform built with Next.js and Stripe Checkout, featuring c
        paths: ['node_modules/**/*']
    ```
 3. Add environment variables in Amplify console
+
+
+## Architecture Diagram
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a365d', 'secondaryColor': '#92400e', 'tertiaryColor': '#1e40af'}}}%%
+flowchart TD
+    subgraph AWS["AWS Amplify (Deployment)"]
+        A[Next.js App]
+    end
+
+    subgraph Frontend["Frontend (React)"]
+        B[Product Display]:::brown
+        C[Cart Context]:::brown
+        D[Image Portal]:::brown
+    end
+
+    subgraph Backend["Backend (Next.js API)"]
+        E[/api/products\nStripe Integration/]:::blue
+        F[/api/checkout\nPayment Session/]:::blue
+    end
+
+    subgraph Stripe["Stripe"]
+        G[Products/Prices]
+        H[Webhooks]
+    end
+
+    A -->|Hosts| Frontend
+    Frontend -->|Fetches| E
+    E -->|Queries| G
+    Frontend -->|Creates| F
+    F -->|Redirects to| H
+    H -->|Confirms| A
+
+    classDef blue fill:#1e40af,stroke:#fff,color:#fff
+    classDef brown fill:#92400e,stroke:#fff,color:#fff
+    classDef dark fill:#1a365d,stroke:#fff,color:#fff
+```
+
 
 ## Troubleshooting
 ### 1. Images Not Loading
